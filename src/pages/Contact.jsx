@@ -1,17 +1,31 @@
+import './Contact.css';
+
 function Contact() {
   return (
-    <div style={{ padding: '40px', textAlign: 'center' }}>
-      <h1>📧 Kontakt</h1>
-      <p>Schreib uns eine Nachricht!</p>
-      <div style={{ 
-        marginTop: '30px',
-        maxWidth: '400px',
-        margin: '30px auto',
-        textAlign: 'left'
-      }}>
-        <p><strong>Email:</strong> hallo@beispiel.de</p>
-        <p><strong>Telefon:</strong> +49 123 456 7890</p>
-        <p><strong>Adresse:</strong> Berlin, Deutschland</p>
+    <div className="contact-container">
+      <div className="contact-header">
+        <h1 className="contact-title">📧 Kontakt</h1>
+        <p className="contact-subtitle">Schreib uns eine Nachricht!</p>
+      </div>
+
+      <div className="contact-info-grid">
+        <div className="contact-card">
+          <div className="contact-icon">📧</div>
+          <h3>Email</h3>
+          <p>hallo@beispiel.de</p>
+        </div>
+
+        <div className="contact-card">
+          <div className="contact-icon">📱</div>
+          <h3>Telefon</h3>
+          <p>+49 123 456 7890</p>
+        </div>
+
+        <div className="contact-card">
+          <div className="contact-icon">📍</div>
+          <h3>Adresse</h3>
+          <p>Berlin, Deutschland</p>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './Users.css';
 
 function Users() {
   const users = [
@@ -8,28 +9,24 @@ function Users() {
   ];
 
   return (
-    <div style={{ padding: '40px' }}>
-      <h1>Benutzer</h1>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+    <div className="users-container">
+      <div className="users-header">
+        <h1 className="users-title">Benutzer</h1>
+      </div>
+
+      <div className="users-grid">
         {users.map(user => (
-          <li key={user.id} style={{ marginBottom: '12px' }}>
-            <Link 
-              to={`/users/${user.id}`}
-              style={{
-                color: '#3498db',
-                textDecoration: 'none',
-                fontSize: '18px',
-                padding: '8px 12px',
-                display: 'inline-block',
-                border: '1px solid #3498db',
-                borderRadius: '4px'
-              }}
-            >
-              {user.name} →
-            </Link>
-          </li>
+          <Link 
+            key={user.id}
+            to={`/users/${user.id}`}
+            className="user-card"
+          >
+            <div className="user-avatar">{user.name.charAt(0)}</div>
+            <h3 className="user-name">{user.name}</h3>
+            <span className="view-profile">Profil anzeigen →</span>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

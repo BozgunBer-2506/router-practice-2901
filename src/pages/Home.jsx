@@ -2,33 +2,10 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
-  const features = [
-    {
-      icon: '🚀',
-      title: 'Schnelle Navigation',
-      description: 'SPA-Navigation ohne Neuladen',
-      link: '/about'
-    },
-    {
-      icon: '👥',
-      title: 'Benutzer Profile',
-      description: 'Dynamische Routen mit Parametern',
-      link: '/users'
-    },
-    {
-      icon: '📝',
-      title: 'Blog System',
-      description: 'Vollständiges CMS mit Artikeln',
-      link: '/blog'
-    }
-  ];
-
   return (
     <div className="home-container">
       <div className="hero-section">
-        <h1 className="hero-title">
-          Willkommen bei <span className="highlight">React Router</span>
-        </h1>
+        <h1 className="hero-title">Willkommen bei React Router</h1>
         <p className="hero-subtitle">
           Eine moderne Single Page Application mit dynamischer Navigation
         </p>
@@ -43,19 +20,37 @@ function Home() {
         </div>
       </div>
 
-      <div className="features-grid">
-        {features.map((feature, index) => (
-          <Link 
-            to={feature.link} 
-            key={index} 
-            className="feature-card"
-          >
-            <div className="feature-icon">{feature.icon}</div>
-            <h3 className="feature-title">{feature.title}</h3>
-            <p className="feature-description">{feature.description}</p>
+      <div className="features-section">
+        <h2 className="section-title">Features</h2>
+        
+        <div className="features-grid">
+          <Link to="/about" className="feature-card">
+            <div className="feature-icon">🚀</div>
+            <h3 className="feature-title">Schnelle Navigation</h3>
+            <p className="feature-description">
+              SPA-Navigation ohne Neuladen der Seite
+            </p>
             <span className="feature-arrow">→</span>
           </Link>
-        ))}
+
+          <Link to="/users" className="feature-card">
+            <div className="feature-icon">👥</div>
+            <h3 className="feature-title">Benutzer Profile</h3>
+            <p className="feature-description">
+              Dynamische Routen mit URL-Parametern
+            </p>
+            <span className="feature-arrow">→</span>
+          </Link>
+
+          <Link to="/blog" className="feature-card">
+            <div className="feature-icon">📝</div>
+            <h3 className="feature-title">Blog System</h3>
+            <p className="feature-description">
+              Vollständiges CMS mit Artikeln und Navigation
+            </p>
+            <span className="feature-arrow">→</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

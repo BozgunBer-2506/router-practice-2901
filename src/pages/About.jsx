@@ -1,23 +1,35 @@
+import './About.css';
+
 function About() {
   return (
-    <div style={{ padding: '40px', textAlign: 'center' }}>
-      <h1>ℹ️ Über uns</h1>
-      <p>Wir lernen React Router!</p>
-      <div style={{ 
-        marginTop: '30px', 
-        padding: '20px', 
-        background: '#f0f0f0', 
-        borderRadius: '8px',
-        maxWidth: '500px',
-        margin: '30px auto'
-      }}>
-        <h3>Was wir lernen:</h3>
-        <ul style={{ textAlign: 'left', lineHeight: '1.8' }}>
-          <li>Statische Routen</li>
-          <li>Dynamische Routen</li>
-          <li>Navigation</li>
-          <li>404-Seiten</li>
-        </ul>
+    <div className="about-container">
+      <div className="about-header">
+        <h1 className="about-title">ℹ️ Über uns</h1>
+        <p className="about-subtitle">Wir lernen React Router!</p>
+      </div>
+
+      <div className="about-content">
+        <div className="info-card">
+          <h2>Was wir lernen:</h2>
+          <ul className="learning-list">
+            <li>
+              <span className="icon">✅</span>
+              <span>Statische Routen</span>
+            </li>
+            <li>
+              <span className="icon">✅</span>
+              <span>Dynamische Routen</span>
+            </li>
+            <li>
+              <span className="icon">✅</span>
+              <span>Navigation</span>
+            </li>
+            <li>
+              <span className="icon">✅</span>
+              <span>404-Seiten</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import './UserProfile.css';
 
 const usersData = {
   1: { id: 1, name: 'Max Mustermann', email: 'max@beispiel.de', role: 'Entwickler' },
@@ -12,10 +13,11 @@ function UserProfile() {
 
   if (!user) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center' }}>
-        <h1>❌ Benutzer nicht gefunden</h1>
+      <div className="user-not-found">
+        <div className="error-icon">❌</div>
+        <h1>Benutzer nicht gefunden</h1>
         <p>Der Benutzer mit ID {userId} existiert nicht.</p>
-        <Link to="/users" style={{ color: '#3498db' }}>
+        <Link to="/users" className="back-link">
           ← Zurück zur Übersicht
         </Link>
       </div>
@@ -23,24 +25,35 @@ function UserProfile() {
   }
 
   return (
-    <div style={{ padding: '40px', maxWidth: '600px', margin: '0 auto' }}>
-      <Link to="/users" style={{ color: '#3498db', textDecoration: 'none' }}>
+    <div className="profile-container">
+      <Link to="/users" className="back-link">
         ← Zurück zur Übersicht
       </Link>
 
-      <h1 style={{ marginTop: '20px' }}>Benutzerprofil</h1>
+      <div className="profile-header">
+        <div className="profile-avatar">{user.name.charAt(0)}</div>
+        <h1 className="profile-title">Benutzerprofil</h1>
+      </div>
 
-      <div style={{
-        padding: '24px',
-        border: '1px solid #ddd',
-        borderRadius: '12px',
-        marginTop: '20px',
-        background: '#f9f9f9'
-      }}>
-        <h2 style={{ marginTop: 0 }}>{user.name}</h2>
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Rolle:</strong> {user.role}</p>
-        <p><strong>ID:</strong> {user.id}</p>
+      <div className="profile-card">
+        <div className="profile-info">
+          <div className="info-row">
+            <span className="info-label">Name:</span>
+            <span className="info-value">{user.name}</span>
+          </div>
+          <div className="info-row">
+            <span className="info-label">Email:</span>
+            <span className="info-value">{user.email}</span>
+          </div>
+          <div className="info-row">
+            <span className="info-label">Rolle:</span>
+            <span className="info-value">{user.role}</span>
+          </div>
+          <div className="info-row">
+            <span className="info-label">ID:</span>
+            <span className="info-value">{user.id}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
