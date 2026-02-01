@@ -2,6 +2,8 @@
 
 This project is a comprehensive exercise designed to master client-side navigation in React using **React Router v6/v7**. It covers everything from basic setup to dynamic routing and nested structures.
 
+**🔗 Live Demo:** [View Live Demo](https://router-practice-cyan.vercel.app/)
+
 ---
 
 ## 🎯 Learning Objectives
