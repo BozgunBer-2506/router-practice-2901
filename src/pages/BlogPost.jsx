@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { getPostBySlug } from '../data/posts';
+import './BlogPost.css';
 
 function BlogPost() {
   const { slug } = useParams();
@@ -7,10 +8,11 @@ function BlogPost() {
 
   if (!post) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center' }}>
-        <h1>❌ Artikel nicht gefunden</h1>
+      <div className="post-not-found">
+        <div className="error-icon">❌</div>
+        <h1>Artikel nicht gefunden</h1>
         <p>Der Artikel "{slug}" existiert nicht.</p>
-        <Link to="/blog" style={{ color: '#3498db' }}>
+        <Link to="/blog" className="back-link">
           ← Zurück zum Blog
         </Link>
       </div>
@@ -18,49 +20,27 @@ function BlogPost() {
   }
 
   return (
-    <article style={{ padding: '40px', maxWidth: '800px', margin: '0 auto' }}>
-      <Link 
-        to="/blog" 
-        style={{ 
-          color: '#3498db', 
-          textDecoration: 'none',
-          fontSize: '14px'
-        }}
-      >
+    <article className="post-container">
+      <Link to="/blog" className="back-link">
         ← Zurück zum Blog
       </Link>
 
-      <h1 style={{ marginTop: '20px', marginBottom: '8px' }}>
-        {post.title}
-      </h1>
-      
-      <p style={{ 
-        color: '#7f8c8d', 
-        fontSize: '14px',
-        marginBottom: '32px' 
-      }}>
-        Veröffentlicht am {post.date}
-      </p>
+      <div className="post-header">
+        <h1 className="post-title">{post.title}</h1>
+        <p className="post-date">
+          Veröffentlicht am {post.date}
+        </p>
+      </div>
 
-      <div style={{ 
-        lineHeight: '1.8',
-        color: '#333',
-        whiteSpace: 'pre-line'
-      }}>
+      <div className="post-content">
         {post.content}
       </div>
 
-      <hr style={{ margin: '40px 0', border: 'none', borderTop: '1px solid #ddd' }} />
-
-      <Link 
-        to="/blog" 
-        style={{ 
-          color: '#3498db', 
-          textDecoration: 'none'
-        }}
-      >
-        ← Zurück zum Blog
-      </Link>
+      <div className="post-footer">
+        <Link to="/blog" className="footer-link">
+          ← Zurück zum Blog
+        </Link>
+      </div>
     </article>
   );
 }
