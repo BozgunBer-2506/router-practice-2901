@@ -12,23 +12,23 @@ function About() {
         <div className="info-card">
           <h2>Was wir lernen:</h2>
           <ul className="learning-list">
-            <li>
-              <span className="icon">✅</span>
-              <span>Statische Routen</span>
-            </li>
-            <li>
-              <span className="icon">✅</span>
-              <span>Dynamische Routen</span>
-            </li>
-            <li>
-              <span className="icon">✅</span>
-              <span>Navigation</span>
-            </li>
-            <li>
-              <span className="icon">✅</span>
-              <span>404-Seiten</span>
-            </li>
-          </ul>
+          <li>
+            <span className="icon">✅</span>
+            <span><strong>Statische Routen:</strong> Erstellung von Pfaden wie Home und Kontakt.</span>
+          </li>
+          <li>
+            <span className="icon">✅</span>
+            <span><strong>Dynamische Routen:</strong> Nutzung von Parametern mit <code>useParams</code>.</span>
+          </li>
+          <li>
+            <span className="icon">✅</span>
+            <span><strong>Navigation:</strong> Client-seitiges Routing mit der <code>Link</code> Komponente.</span>
+          </li>
+          <li>
+            <span className="icon">✅</span>
+            <span><strong>404-Seiten:</strong> Behandlung von ungültigen URLs mit Wildcard-Pfaden.</span>
+          </li>
+        </ul>
         </div>
       </div>
     </div>
